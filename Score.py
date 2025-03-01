@@ -2,6 +2,8 @@
 import os
 from Utils import SCORES_FILE_NAME
 
+difficulty = 0
+
 POINTS_OF_WINNING = lambda difficulty: (difficulty * 3) + 5
 
 
@@ -18,3 +20,5 @@ def add_score(difficulty):
             file.write(str(new_score))
     except Exception as e:
         print(f"Error: {e}")
+
+add_score(difficulty)
