@@ -21,4 +21,5 @@ def add_score(difficulty):
     except Exception as e:
         print(f"Error: {e}")
 
-add_score(difficulty)
+
+print(add_score(difficulty))
