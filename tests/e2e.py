@@ -14,7 +14,8 @@ def test_scores_service(url):
         driver.quit()
 
 def main_function():
-    if tests():
+    url = "http://127.0.0.1:5000"
+    if test_scores_service(url):
         return 0
     else:
         return -1
