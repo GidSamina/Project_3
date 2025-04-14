@@ -2,11 +2,15 @@
 pipeline {
     agent any
     stages {
-        stage('Checkout') {
+
+         stage('Checkout') {
             steps {
-                checkout scm
+                script {
+                    git url: 'https://github.com/GidSamina/Project_World_of_Games.git'
+                }
             }
         }
+
         stage('Build') {
             steps {
                 script {
