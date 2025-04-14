@@ -4,7 +4,6 @@ services:
   app:
     build:
       context: .
-    image: gideonsam/my_image_class9:latest
+    image: gideonsam/my_image_class10:latest
     ports:
       - "80:80"
-
