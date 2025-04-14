@@ -10,14 +10,14 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    docker.build('your-image-name')
+                    docker.build('my_image_class10:latest')
                 }
             }
         }
         stage('Run') {
             steps {
                 script {
-                    docker.image('my_image_class9:latest').run('-p 8777:8777 -v $WORKSPACE/Scores.txt:/app/Scores.txt')
+                    docker.image('my_image_class10:latest').run('-p 8777:8777 -v $WORKSPACE/Scores.txt:/app/Scores.txt')
                 }
             }
         }
@@ -31,9 +31,9 @@ pipeline {
         stage('Finalize') {
             steps {
                 script {
-                    sh 'docker stop $(docker ps -q --filter ancestor=my_image_class9:latest)'
-                    docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-credentials') {
-                        docker.image('my_image_class9:latest').push('latest')
+                    sh 'docker stop $(docker ps -q --filter ancestor=my_image_class10:latest)'
+                    docker.withRegistry('https://index.docker.io/v1/') {
+                        docker.image('my_image_class10:latest').push('latest')
                     }
                 }
             }
