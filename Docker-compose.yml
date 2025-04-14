@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+    image: gideonsam/my_image_class9:latest
+    ports:
+      - "80:80"
