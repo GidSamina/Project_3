@@ -17,4 +17,4 @@ COPY Scores.txt /Scores.txt
 EXPOSE 5000
 
 # Run the application
-CMD ["python", "XXX"]
+CMD ["python", "Live.py"]
